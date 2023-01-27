@@ -1,0 +1,25 @@
+package Animal;
+
+public class PlusMain extends PlusGame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PlusGame game = new PlusGame();
+		int cnt = 0;
+
+		while (true) {
+			game.makeRandom();
+			game.quiz();
+			int answer = game.sc.nextInt();
+			System.out.println(game.checkAnswer(answer));
+			if (game.checkAnswer(answer) == false) {
+				cnt++;
+			}
+			if (cnt > 4) {
+				System.out.println("종료합니다.");
+				break;
+			}
+		}
+	}
+
+}

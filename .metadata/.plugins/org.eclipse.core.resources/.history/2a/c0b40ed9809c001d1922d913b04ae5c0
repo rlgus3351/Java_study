@@ -1,0 +1,23 @@
+package test2;
+
+public class Ex14 {
+
+	public static void main(String[] args) {
+		System.out.println(getMiddle("test"));
+
+	}
+	
+	public static String getMiddle(String a) {
+		String[] text = a.split("");
+		
+		if(text.length %2==1) {
+			String result = text[text.length%2+1];
+			return result;
+		}else {
+			String result = text[text.length%2+1];
+			return result;
+		}
+		
+	}
+
+}

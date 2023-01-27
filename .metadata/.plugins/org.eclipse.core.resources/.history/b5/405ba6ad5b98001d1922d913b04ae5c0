@@ -1,0 +1,20 @@
+package Music;
+
+import javazoom.jl.player.MP3Player;
+
+public class MusicCon {
+	
+	MP3Player MP3;
+	
+	public void play(int index) {
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+
+}

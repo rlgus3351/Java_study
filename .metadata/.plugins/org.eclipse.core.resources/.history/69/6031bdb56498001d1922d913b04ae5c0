@@ -1,0 +1,5 @@
+package Animal;
+
+public class 기린 extends 포유류{
+
+}

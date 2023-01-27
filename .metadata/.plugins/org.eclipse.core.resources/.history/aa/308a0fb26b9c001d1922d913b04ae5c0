@@ -1,0 +1,24 @@
+package test2;
+
+import java.util.Scanner;
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("총금액 입력 : ");
+		int money = sc.nextInt();
+		System.out.printf("잔돈 : %d원\n", money);
+		int[] array = {10000,5000,1000,500,100};
+		
+		for(int i=0; i<array.length; i++) {
+			if(money % array[i]>0) {
+				System.out.println(array[i]+ "원 : " + money/array[i]+"개");
+				money%=array[i];
+			}
+		}
+		
+
+	}
+
+}

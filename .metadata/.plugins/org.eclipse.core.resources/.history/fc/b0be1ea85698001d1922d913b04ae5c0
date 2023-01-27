@@ -1,0 +1,10 @@
+package Music;
+
+public class Ex스태틱 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package test2;
+
+import java.util.Scanner;
+
+public class Ex32 {
+
+	public static void main(String[] args) {
+		System.out.println("==== 채점 하기 ====");
+		Scanner sc = new Scanner(System.in);
+		String text = sc.next();
+		String[] answer = text.split("");
+		int cnt = 0;
+		int sum = 0;
+		for (int i = 0; i < answer.length; i++) {
+			if(answer[i].equals("o")){
+				cnt++;
+				sum+=cnt;
+			}else {
+				cnt=0;
+				sum+=cnt;
+			}
+		}
+	}
+
+}

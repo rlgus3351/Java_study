@@ -1,0 +1,22 @@
+package 상속기초;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// Parents p 객체 생성
+		Parents p = new Parents();
+
+		// Child c 객체 생성
+		Child c = new Child();
+		
+		p.makeGalbi();
+		p.makeKimchi();
+		
+		c.makeGalbi();
+		c.makeKimchi();
+		
+
+	}
+
+}

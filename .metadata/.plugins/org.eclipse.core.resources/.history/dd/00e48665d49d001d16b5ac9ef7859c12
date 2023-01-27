@@ -1,0 +1,38 @@
+package test1;
+
+import java.util.Arrays;
+
+public class Ex15 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String score = "A,A,B,C,D,A,C,D,D,D,F";
+		String [] text = score.split(",");
+		int cntA = 0;
+		int cntB = 0;
+		int cntC = 0;
+		int cntD = 0;
+		int cntF = 0;
+		
+		for(int i=0; i<text.length; i++) {
+			if(text[i].equals("A")) {
+				cntA++;
+			}else if(text[i].equals("B")) {
+				cntB++;
+			}else if(text[i].equals("C")) {
+				cntC++;
+			}else if(text[i].equals("D")) {
+				cntD++;
+			}else {
+				cntF++;
+			}
+		}
+		System.out.printf("A : %d명\n", cntA);
+		System.out.printf("B : %d명\n", cntB);
+		System.out.printf("C : %d명\n", cntC);
+		System.out.printf("D : %d명\n", cntD);
+		System.out.printf("F : %d명", cntF);
+		
+	}
+
+}

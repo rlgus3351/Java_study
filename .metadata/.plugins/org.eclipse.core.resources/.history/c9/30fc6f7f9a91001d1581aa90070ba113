@@ -1,0 +1,29 @@
+package javaproject;
+
+public class Ex03 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//문제 1-2+3-4+....+99-100를 계산하여 답을 출력하시오.
+		
+		//1. 1-2+3-4+....+99-100출력
+		//1_1. 홀수는 + 짝수는 - 
+		int result = 0;
+		for(int i = 1; i<=100; i++) {
+			if(i %2 ==0) {
+				System.out.print((-i+" "));
+				result -=i;
+			}else {
+				System.out.print(i+ " ");
+				result +=i;
+			}
+
+		}
+		//결과 창 출력
+		System.out.print("결과 : " + result);	
+		
+
+
+	}
+
+}

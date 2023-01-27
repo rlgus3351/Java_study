@@ -1,0 +1,22 @@
+package test1;
+
+public class Ex14 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println(getMiddle("test"));
+	}
+
+	public static String getMiddle(String a) {
+		int num = a.length();
+		String text = " ";
+		if (num % 2 == 1) {
+			text = a.substring(num/2,num/2+1);
+			return text;
+		} else {
+			text = a.substring(num/2-1, num/2+1);
+			return text;
+		}
+	}
+
+}

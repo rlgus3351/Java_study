@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;객체형변환.Smartphone&apos; to &apos;SmartPhone&apos;&#x0D;&#x0A;- Original project: &apos;Ex10상속&apos;&#x0D;&#x0A;- Original element: &apos;객체형변환.Smartphone&apos;&#x0D;&#x0A;- Renamed element: &apos;객체형변환.SmartPhone&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Smartphone&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;객체형변환{Smartphone.java[Smartphone" matchStrategy="1" name="SmartPhone" qualified="false" references="true" similarDeclarations="false" stamp="1674114732616" textual="false" version="1.0"/>
+</session>

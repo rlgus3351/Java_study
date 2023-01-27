@@ -1,0 +1,5 @@
+package Animal;
+
+public class 토끼 extends 포유류 {
+
+}

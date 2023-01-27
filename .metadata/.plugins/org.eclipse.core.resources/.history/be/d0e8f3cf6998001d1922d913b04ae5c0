@@ -1,0 +1,17 @@
+package Animal;
+
+public abstract class 펭귄 extends 조류 {
+
+	@Override
+	protected void 날다() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	protected void 알을낳다() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

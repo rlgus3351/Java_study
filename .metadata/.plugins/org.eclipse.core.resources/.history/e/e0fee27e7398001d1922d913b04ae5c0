@@ -1,0 +1,19 @@
+package Animal;
+
+import java.util.Scanner;
+
+public class GameMain extends PlusGame {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PlusGame game = new PlusGame();
+		Scanner sc = new Scanner(System.in);
+		int cnt = 0;
+
+		game.makeRandom();
+		game.quiz();
+		int answer = sc.nextInt();
+		System.out.println(game.checkAnswer(answer));
+
+	}
+}

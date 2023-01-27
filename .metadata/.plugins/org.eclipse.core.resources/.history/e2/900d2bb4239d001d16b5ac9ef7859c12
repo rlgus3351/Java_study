@@ -1,0 +1,159 @@
+package model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class memberDAO {
+
+	// Data Access Object : 데이터에 접근하는 것을 도와주는 객체
+	// DB랑 연결해서 insert, delete,update,select하는 코드들의 모음
+	// 메소드 형태로 코드 작성
+	// 보통 SQL쿼리를 실행하고, 실행 결과 리턴 받기
+//------------------------------------------------------------------회원가입 메소드-----------------------------------------------------------//
+	public int join(String id, String pw, String name, String tel) {
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		int row = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("로딩 완료");
+
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user_id = "hr";
+			String user_pw = "hr";
+			conn = DriverManager.getConnection(url, user_id, user_pw);
+
+			String sql = "insert into big_member values(?,?,?,?)";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+			psmt.setString(3, name);
+			psmt.setString(4, tel);
+
+			row = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			// 예외상황 발생 시 내용을 출력해준다.
+			e.printStackTrace();
+		} finally {
+			// 위에서 예외 상황이 발생하더라도 반드시 한번은 들어오는 구간
+			// 6. DB 연결 종료 -----> 자원 반납
+			try {
+				if (psmt != null)
+					psmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return row;
+
+	}
+
+//------------------------------------------------------------------로그인 메소드------------------------------------------------------------//
+	public memberDTO login(String id, String pw) {
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		memberDTO dto = null;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user_id = "hr";
+			String user_pw = "hr";
+			conn = DriverManager.getConnection(url, user_id, user_pw);
+
+			String sql = "select * from big_member where id = ? and pw = ?";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				String uid = rs.getString(1);
+				String upw = rs.getString(2);
+				String uname = rs.getString("name");
+				String utel = rs.getString("tel");
+				uname = rs.getString("name");
+				dto = new memberDTO(uid, upw, uname, utel);
+
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
+
+//------------------------------------------------------------------로그인 메소드------------------------------------------------------------//
+	public memberDTO[] user() {
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		memberDTO[] dto = new memberDTO[100];
+		try {
+			// 2) 드라이버 동적 로딩
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// 3) DB 연결 통로 생성
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user_id = "hr";
+			String user_pw = "hr";
+			conn = DriverManager.getConnection(url, user_id, user_pw);
+			String sql = "select * from big_member";
+
+			psmt = conn.prepareStatement(sql);
+
+			rs = psmt.executeQuery();
+			int i = 0;
+			while (rs.next()) {
+				String uid = rs.getString("id");
+				String upw = rs.getString("pw");
+				String uname = rs.getString("name");
+				String utel = rs.getString("tel");
+				dto[i] = new memberDTO(uid, upw, uname, utel);
+				i++;
+			}
+
+		} catch (Exception e) {
+			// 반드시 넣어 줘야한다.
+			e.printStackTrace(); // 에러를 콘솔창에 출력
+		} finally {
+			try {
+				// 8) 사용했던 객체들 담기 (나중에 만들어진 순서대로)
+				if (rs != null) {
+					rs.close();
+				}
+				if (psmt != null) {
+					psmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		return dto;
+	}
+}

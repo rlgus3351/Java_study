@@ -1,0 +1,29 @@
+package test2;
+
+import java.util.Arrays;
+
+public class Ex15 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String score = "A,A,B,C,D,A,C,D,D,D,F";
+		String[] temp = score.split(",");
+		String[] array = { "A", "B", "C", "D", "F" };
+		int[] sum = new int[5];
+		int cnt = 1;
+		for (int i = 0; i < temp.length; i++) {
+			for (int j = 0; j < array.length; j++) {
+				if (temp[i].equals(array[j])) {
+					sum[j] += cnt;
+				}
+			}
+
+		}
+
+		for (int i = 0; i < sum.length; i++) {
+			System.out.println(array[i] + " : " + sum[i] + "명");
+		}
+
+	}
+
+}

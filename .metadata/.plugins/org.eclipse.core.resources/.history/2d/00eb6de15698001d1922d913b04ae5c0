@@ -1,0 +1,19 @@
+package Music;
+
+public class Ex스태틱 {
+
+	public static void main(String[] args) {
+
+		// 5, 3이라는 정수를
+		// add라는 메소드를 통해 연산
+		// 결과값 console에 출력
+		System.out.println(add(5, 3));
+
+	}
+
+	public static int add(int num1, int num2) {
+
+		return num1 + num2;
+	}
+
+}

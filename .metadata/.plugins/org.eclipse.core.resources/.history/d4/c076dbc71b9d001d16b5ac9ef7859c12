@@ -1,0 +1,14 @@
+package model;
+
+public class memberDTO {
+
+	// DTO : Data Transfer Object 데이터를 이동할 수 있게 하는 나만의 자료형
+
+	// 필드 정의하기
+	// id,pw,name,tel
+	private String id;
+	private String pw;
+	private String name;
+	private String tel;
+
+}

@@ -1,0 +1,7 @@
+package Music;
+
+public class MusicVO {
+	
+	private String singer,title, path;
+	
+}
