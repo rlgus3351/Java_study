@@ -21,12 +21,31 @@ public class memberDAO {
 	// 중복으로 작성되고 있는 driver 동적 로딩부터 연결 생성까지 ---> 메서드로 빼기
 	// 재사용
 //------------------------------------------------------------------DB연결 메소드-----------------------------------------------------------//
+//	public void getConn() {
+//		try {
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//			String user_id = "hr";
+//			String user_pw = "hr";
+//			conn = DriverManager.getConnection(url, user_id, user_pw);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//
+//	}
+
+//------------------------------------------------------------------DB연결 메소드-----------------------------------------------------------//	
 	public void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@localhost:1521:xe";
-			String user_id = "hr";
-			String user_pw = "hr";
+			String url = "jdbc:oracle:thin:@gjaischool-b.ddns.net:1525:xe";
+			
+			//jdbc:oracle:thin --> protocol
+			//@localhost --> 서버주소, @IP주소
+			// :1521 --> port number : 1525
+			// : xe --> DB 이름
+			String user_id = "cgi_3_0131_3";
+			String user_pw = "smhrd3";
 			conn = DriverManager.getConnection(url, user_id, user_pw);
 		} catch (Exception e) {
 			e.printStackTrace();

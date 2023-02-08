@@ -1,8 +1,0 @@
-package 객체형변환;
-
-public class SmartPhone extends Phone{
-	
-	// 자식 클래스, 서브 클래스
-	
-	
-}

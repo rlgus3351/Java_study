@@ -1,8 +1,0 @@
-package model;
-
-public class memberDAO {
-
-	// Data Access Object : 데이터에 접근하는 것을 도와주는 객체
-	// DB랑 연결해서 insert, delete,update,select하는 코드들의 모음
-
-}

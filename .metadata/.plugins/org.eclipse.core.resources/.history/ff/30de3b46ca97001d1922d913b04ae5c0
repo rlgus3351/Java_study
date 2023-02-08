@@ -1,9 +1,0 @@
-package 상속기초;
-
-public class Child extends Parents {
-
-	// 새로운 클래스, 자식클래스, 서브클래스
-	// 식당 2호점
-	
-	
-}

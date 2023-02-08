@@ -8,6 +8,10 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="scanner"/>
 		<list key="findhistory">
+			<item value="package javaProject;"/>
+			<item value="package festival;"/>
+			<item value="package test1;"/>
+			<item value="package tes;"/>
 			<item value="package javaproject;"/>
 			<item value="package Animal;"/>
 			<item value="package ArrayList기초;"/>
@@ -19,7 +23,6 @@
 			<item value="package 일차원배열;"/>
 			<item value="package arrayStudy;"/>
 			<item value="package for문;"/>
-			<item value="package forStudy;"/>
 		</list>
 		<list key="replacehistory">
 		</list>
